@@ -1,0 +1,25 @@
+<article class="feed__item grid-12 archive-page__item">
+    <div class="feed__content col-full md-col-8">
+        <header class="stack--xs">
+            <div class="card-meta">
+                {{#if mainTag}}<span>{{mainTag.name}}</span>{{/if}}
+                <time datetime="{{date createdAt "YYYY-MM-DD"}}">{{date createdAt "MMMM D, YYYY"}}</time>
+            </div>
+            <h3 class="feed__title headline-m">
+                <a href="{{url}}">{{title}}</a>
+            </h3>
+        </header>
+        <p>
+            {{#if postViewConfig.articleExcerpt}}
+                {{postViewConfig.articleExcerpt}}
+            {{else}}
+                {{excerpt}}
+            {{/if}}
+        </p>
+    </div>
+    {{#featuredImage}}
+        <figure class="feed__image col-full md-col-4">
+            <img src="{{url}}" alt="{{alt}}" loading="lazy">
+        </figure>
+    {{/featuredImage}}
+</article>

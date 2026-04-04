@@ -1,0 +1,149 @@
+{{> head}}
+{{> header}}
+
+{{#post}}
+    <main class="post padding-xxl article-post video-post">
+        <article class="content">
+            <header class="video-post__hero">
+                <div class="section-shell video-post__hero-inner">
+                    <div class="video-post__hero-copy stack">
+                        {{#if @config.post.episodeLabel}}
+                            <span class="card-kicker">{{@config.post.episodeLabel}}</span>
+                        {{else}}
+                            {{#if mainTag}}
+                                <span class="card-kicker">{{mainTag.name}}</span>
+                            {{else}}
+                                <span class="card-kicker">Podcast episode</span>
+                            {{/if}}
+                        {{/if}}
+
+                        <h1>{{title}}</h1>
+
+                        {{#if @config.post.episodeGuest}}
+                            <p class="video-post__guest">with {{@config.post.episodeGuest}}</p>
+                        {{else}}
+                            {{#if author}}
+                                <p class="video-post__guest">with {{author.name}}</p>
+                            {{/if}}
+                        {{/if}}
+
+                        {{#if @config.post.articleExcerpt}}
+                            <p class="lead video-post__lead">{{@config.post.articleExcerpt}}</p>
+                        {{else}}
+                            {{#if excerpt}}
+                                <p class="lead video-post__lead">{{excerpt}}</p>
+                            {{/if}}
+                        {{/if}}
+
+                        <div class="card-meta video-post__meta">
+                            <time datetime="{{date createdAt "YYYY-MM-DD"}}">{{date createdAt "MMMM D, YYYY"}}</time>
+                            {{#if @config.post.episodeLength}}
+                                <span>{{@config.post.episodeLength}}</span>
+                            {{/if}}
+                            {{#if mainTag}}
+                                <a href="{{mainTag.url}}">{{mainTag.name}}</a>
+                            {{/if}}
+                        </div>
+                    </div>
+
+                    {{#if @config.post.videoEmbedUrl}}
+                        <div
+                            class="video-post__player-shell"
+                            data-video-embed-root
+                            data-video-embed-title="{{title}}"
+                            data-video-embed-url="{{@config.post.videoEmbedUrl}}">
+                            {{#featuredImage}}
+                                <img class="video-post__poster" src="{{url}}" alt="{{alt}}" loading="eager">
+                            {{/featuredImage}}
+                            <div class="video-post__player-fallback">Loading episode video...</div>
+                        </div>
+                    {{else}}
+                        <div class="video-post__player-shell video-post__player-shell--placeholder">
+                            {{#featuredImage}}
+                                <img class="video-post__poster" src="{{url}}" alt="{{alt}}" loading="eager">
+                            {{else}}
+                                <div class="video-post__player-empty" aria-hidden="true"></div>
+                            {{/featuredImage}}
+                            <div class="video-post__player-fallback">Add a YouTube URL in the post settings to embed the episode here.</div>
+                        </div>
+                    {{/if}}
+                </div>
+            </header>
+
+            <section class="surface-default video-post__content-shell">
+                <div class="section-shell video-post__body-layout">
+                    <aside class="video-post__aside">
+                        <div class="video-post__aside-card">
+                            <div class="video-post__overview">
+                                <p class="video-post__aside-label">Episode details</p>
+                                <div class="video-post__overview-item">
+                                    <span>Published</span>
+                                    <time datetime="{{date createdAt "YYYY-MM-DD"}}">{{date createdAt "MMMM D, YYYY"}}</time>
+                                </div>
+                                {{#if @config.post.episodeLength}}
+                                    <div class="video-post__overview-item">
+                                        <span>Length</span>
+                                        <span>{{@config.post.episodeLength}}</span>
+                                    </div>
+                                {{/if}}
+                                {{#if mainTag}}
+                                    <div class="video-post__overview-item">
+                                        <span>Topic</span>
+                                        <a href="{{mainTag.url}}">{{mainTag.name}}</a>
+                                    </div>
+                                {{/if}}
+                            </div>
+
+                            <div class="video-post__share">
+                                {{> article-share label="Share this episode"}}
+                            </div>
+
+                            <nav class="video-post__nav" data-episode-nav hidden aria-label="Episode sections">
+                                <p class="video-post__aside-label">Jump to</p>
+                                <div class="video-post__nav-links" data-episode-nav-links></div>
+                            </nav>
+                        </div>
+                    </aside>
+
+                    <div class="video-post__main">
+                        {{#if @config.post.episodeHook}}
+                            <p class="video-post__hook">{{@config.post.episodeHook}}</p>
+                        {{/if}}
+
+                        <div class="article-post__content video-post__content" data-episode-content>
+                            {{{text}}}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+        {{#if @config.custom.videoPostsTag}}
+            {{#getTag @config.custom.videoPostsTag}}
+                {{#checkIf postsNumber ">" 1}}
+                    <section class="video-post__related padding-xxl" aria-labelledby="video-post-related-title">
+                        <div class="section-shell">
+                            <div class="video-post__related-header layout-inline-between layout-inline-between--start">
+                                <h2 id="video-post-related-title" class="display-s video-post__related-title">More episodes</h2>
+                                <a class="video-post__browse-link" href="{{url}}">Explore all episodes</a>
+                            </div>
+                            <div class="grid-12 video-post__related-grid">
+                                {{#getPostsByTags 3 @config.custom.videoPostsTag ../id}}
+                                    <div class="md-col-4 video-post__related-item">
+                                        {{> home-post-card}}
+                                    </div>
+                                {{/getPostsByTags}}
+                            </div>
+                        </div>
+                    </section>
+                {{/checkIf}}
+            {{/getTag}}
+        {{else}}
+            {{#if relatedPosts}}
+                {{> related-posts-section}}
+            {{/if}}
+        {{/if}}
+    </main>
+{{/post}}
+
+{{> footer}}

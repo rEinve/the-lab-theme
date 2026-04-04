@@ -1,0 +1,72 @@
+{{> head}}
+{{> header}}
+
+{{#post}}
+    <main class="post article-post article-post--standard">
+        <article class="content">
+            <div class="section-shell layout-split layout-split--media article-post__hero article-post__hero--standard padding-xxl">
+                <header class="article-post__hero-content padding-bottom">
+                    <div class="article-post__hero-copy stack">
+                        {{#if mainTag}}
+                            <span class="card-kicker">{{mainTag.name}}</span>
+                        {{/if}}
+                        <h1>{{title}}</h1>
+                        <div class="card-meta article-post__meta">
+                            <time datetime="{{date createdAt "YYYY-MM-DD"}}">{{date createdAt "MMMM D, YYYY"}}</time>
+                        </div>
+                        {{#if @config.post.articleExcerpt}}
+                            <p class="lead article-post__lead">{{@config.post.articleExcerpt}}</p>
+                        {{else}}
+                            {{#if excerpt}}
+                                <p class="lead article-post__lead">{{excerpt}}</p>
+                            {{/if}}
+                        {{/if}}
+                    </div>
+                </header>
+
+                {{#featuredImage}}
+                    <figure class="article-post__image">
+                        <div class="article-post__image-frame">
+                            <img src="{{url}}" alt="{{alt}}" loading="eager">
+                        </div>
+                    </figure>
+                {{/featuredImage}}
+            </div>
+
+            <div class="surface-default">
+                <div class="section-shell grid-12 padding-xxl article-post__body-layout">
+                    <aside class="col-full md-col-2 lg-col-1 article-post__share-rail" aria-label="Share this article">
+                        <div class="article-post__share-rail-inner">
+                            {{> article-share label="Share"}}
+                        </div>
+                    </aside>
+                    <div class="col-full md-col-10 lg-col-9 article-post__content article-post__content--standard">
+                        {{{text}}}
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <footer class="padding-xxl article-post__footer">
+            <div class="section-shell grid-12">
+                <div class="article-post__footer-spacer md-col-2 lg-col-1" aria-hidden="true"></div>
+                <div class="col-full md-col-10 lg-col-9 article-post__footer-inner">
+                    <p class="article-post__updated">This article was updated on {{date modifiedAt "MMMM D, YYYY"}}</p>
+                    <div class="article-post__footer-actions article-post__footer-actions--standard layout-inline-between layout-inline-between--start">
+                        <ul class="article-post__tags">
+                            {{#each tags}}
+                                <li><a href="{{url}}">{{name}}</a></li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        {{#if relatedPosts}}
+            {{> related-posts-section}}
+        {{/if}}
+    </main>
+{{/post}}
+
+{{> footer}}

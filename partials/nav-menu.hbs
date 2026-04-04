@@ -1,0 +1,19 @@
+<ul class="{{#if level}}nav-links nav-links--nested{{else}}nav-links{{/if}}">
+    {{#each items}}
+        <li{{menuItemClasses}}>
+            {{#if link}}
+                <a href="{{menuUrl}}"
+                   {{#if title}}title="{{title}}"{{/if}}
+                   {{#if target}} target="{{target}}"{{/if}}
+                   {{#if rel}} rel="{{rel}}"{{/if}}>
+                    {{label}}
+                </a>
+            {{else}}
+                <span>{{label}}</span>
+            {{/if}}
+            {{#if items}}
+                {{> nav-menu items=items level=true}}
+            {{/if}}
+        </li>
+    {{/each}}
+</ul>

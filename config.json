@@ -1,0 +1,263 @@
+{
+  "name": "mytheme-01",
+  "version": "1.0.0",
+  "author": "Meshack M.",
+  "menus": {
+    "mainmenu": "Main menu"
+  },
+  "pageTemplates": {
+    "blank": "Blank HTML page"
+  },
+  "postTemplates": {
+    "vlog": "Podcast / vlog episode"
+  },
+  "renderer": {
+    "relatedPostsNumber": 3,
+    "includeFeaturedInPosts": true,
+    "tagsIncludeFeaturedInPosts": true,
+    "authorsIncludeFeaturedInPosts": true,
+    "featuredPostsNumber": 0,
+    "tagsFeaturedPostsNumber": 0,
+    "authorsFeaturedPostsNumber": 0,
+    "includeHandlebarsInHelpers": false,
+    "create404page": true,
+    "nameFor404page": "404.html",
+    "createContentStructure": true
+  },
+  "supportedFeatures": {
+    "authorImages": true,
+    "blockEditor": true,
+    "errorPage": true,
+    "tagImages": true,
+    "tagsList": true,
+    "pages": true,
+    "postsPage": true
+  },
+  "config": [
+    {
+      "name": "logo",
+      "label": "Website logo",
+      "value": "",
+      "type": "media",
+      "upload": true
+    },
+    {
+      "name": "postsPerPage",
+      "label": "Posts per page",
+      "value": 6,
+      "type": "number"
+    },
+    {
+      "name": "tagsPostsPerPage",
+      "label": "Tag posts per page",
+      "value": 6,
+      "type": "number"
+    },
+    {
+      "name": "authorsPostsPerPage",
+      "label": "Author posts per page",
+      "value": 6,
+      "type": "number"
+    },
+    {
+      "name": "excerptLength",
+      "label": "Excerpt length",
+      "value": 30,
+      "type": "number"
+    }
+  ],
+  "customConfig": [
+    {
+      "name": "homeHeroTitle",
+      "label": "Homepage hero title",
+      "group": "Homepage",
+      "value": "I'm Meshack",
+      "type": "text"
+    },
+    {
+      "name": "homeHeroLead",
+      "label": "Homepage hero lead",
+      "group": "Homepage",
+      "value": "I create videos, podcasts, and essays about resilience, modern work, and the small decisions that quietly shape our lives. Not from theory - from experience.",
+      "type": "textarea"
+    },
+    {
+      "name": "featuredBookPage",
+      "label": "Featured book page",
+      "group": "Homepage",
+      "value": "",
+      "type": "pages-dropdown",
+      "multiple": false
+    },
+    {
+      "name": "bookPurchaseUrl",
+      "label": "Book purchase URL",
+      "group": "Homepage",
+      "value": "https://mrmeshack.gumroad.com/l/fsmayy",
+      "type": "text"
+    },
+    {
+      "name": "homepageLatestPosts",
+      "label": "Latest tab posts",
+      "group": "Homepage",
+      "value": "",
+      "type": "posts-dropdown",
+      "multiple": true
+    },
+    {
+      "name": "homepageExploreTags",
+      "label": "Explore work tab topics",
+      "group": "Homepage",
+      "value": [
+        1,
+        3,
+        2
+      ],
+      "type": "tags-dropdown",
+      "multiple": true
+    },
+    {
+      "name": "primaryTagLinks",
+      "label": "Primary tag links",
+      "group": "Navigation",
+      "value": "",
+      "type": "tags-dropdown",
+      "multiple": true
+    },
+    {
+      "name": "bookPage",
+      "label": "Book page",
+      "group": "Navigation",
+      "value": "",
+      "type": "pages-dropdown",
+      "multiple": false
+    },
+    {
+      "name": "aboutPage",
+      "label": "About page",
+      "group": "Navigation",
+      "value": "",
+      "type": "pages-dropdown",
+      "multiple": false
+    },
+    {
+      "name": "contactPage",
+      "label": "Contact page",
+      "group": "Navigation",
+      "value": "",
+      "type": "pages-dropdown",
+      "multiple": false
+    },
+    {
+      "name": "archivePath",
+      "label": "Archive path",
+      "group": "Navigation",
+      "value": "posts/index.html",
+      "type": "text"
+    },
+    {
+      "name": "videoPostsTag",
+      "label": "Podcast / vlog tag",
+      "group": "Podcast / vlog",
+      "value": "",
+      "type": "tags-dropdown",
+      "multiple": false
+    },
+    {
+      "name": "youtubeUrl",
+      "label": "YouTube URL",
+      "group": "Footer",
+      "value": "https://youtube.com",
+      "type": "text"
+    },
+    {
+      "name": "instagramUrl",
+      "label": "Instagram URL",
+      "group": "Footer",
+      "value": "https://instagram.com",
+      "type": "text"
+    },
+    {
+      "name": "facebookUrl",
+      "label": "Facebook URL",
+      "group": "Footer",
+      "value": "https://facebook.com",
+      "type": "text"
+    },
+    {
+      "name": "xUrl",
+      "label": "X URL",
+      "group": "Footer",
+      "value": "https://x.com",
+      "type": "text"
+    },
+    {
+      "name": "googleAnalyticsId",
+      "label": "Google Analytics measurement ID",
+      "group": "Analytics",
+      "value": "G-4EKVRPD9KK",
+      "type": "text"
+    },
+    {
+      "name": "googleAnalyticsHosts",
+      "label": "Google Analytics live hostnames",
+      "group": "Analytics",
+      "value": "themeshak.com,www.themeshak.com",
+      "type": "text"
+    }
+  ],
+  "postConfig": [
+    {
+      "name": "articleExcerpt",
+      "label": "Article excerpt",
+      "note": "Used everywhere the theme displays an excerpt. Keep it around 220 characters for consistency.",
+      "value": "",
+      "type": "textarea"
+    },
+    {
+      "name": "videoEmbedUrl",
+      "label": "YouTube video URL",
+      "note": "Used by the Podcast / vlog episode template. Paste a full YouTube watch, share, embed, or shorts URL.",
+      "value": "",
+      "type": "text"
+    },
+    {
+      "name": "episodeGuest",
+      "label": "Episode guest or subtitle",
+      "note": "Example: Dr. Tracey Marks, MD",
+      "value": "",
+      "type": "text"
+    },
+    {
+      "name": "episodeLength",
+      "label": "Episode length",
+      "note": "Example: 58 minutes",
+      "value": "",
+      "type": "text"
+    },
+    {
+      "name": "episodeLabel",
+      "label": "Episode label",
+      "note": "Short kicker shown above the title.",
+      "value": "Podcast episode",
+      "type": "text"
+    },
+    {
+      "name": "episodeHook",
+      "label": "Episode hook",
+      "note": "Optional bold summary shown above the body content.",
+      "value": "",
+      "type": "textarea"
+    }
+  ],
+  "files": {
+    "ignoreAssets": [
+      "scss",
+      ".DS_Store"
+    ],
+    "assetsPath": "assets",
+    "partialsPath": "partials",
+    "useDynamicAssets": false
+  },
+  "customElements": []
+}

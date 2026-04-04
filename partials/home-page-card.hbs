@@ -1,0 +1,22 @@
+<article class="home-story-card">
+    <a class="home-story-card__media" href="{{url}}">
+        {{#featuredImage}}
+            <img src="{{url}}" alt="{{alt}}" loading="lazy">
+        {{else}}
+            <img src="{{asset "images/serenity.jpg"}}" alt="{{title}}" loading="lazy">
+        {{/featuredImage}}
+    </a>
+    <div class="home-story-card__body">
+        <span class="home-story-card__eyebrow">{{eyebrow}}</span>
+        <h3 class="headline-s home-story-card__title">
+            <a href="{{url}}">{{title}}</a>
+        </h3>
+        <p class="home-story-card__excerpt">
+            {{#if excerpt}}{{excerpt}}{{else}}Read more about {{title}}.{{/if}}
+        </p>
+    </div>
+    <div class="home-story-card__footer">
+        {{#if tagOne}}<span class="home-story-card__tag">{{tagOne}}</span>{{/if}}
+        {{#if tagTwo}}<span class="home-story-card__tag">{{tagTwo}}</span>{{/if}}
+    </div>
+</article>

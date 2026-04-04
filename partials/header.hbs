@@ -1,0 +1,54 @@
+<header class="header">
+    <div class="section-shell">
+        <nav class="nav-container site-nav" aria-label="Primary">
+            <a href="{{@website.baseUrl}}" class="navbar-brand custom-logo-link" rel="home" aria-label="{{@website.name}} home">
+                {{#if @website.logo}}
+                    <img src="{{@website.logo}}" alt="{{@website.name}}" decoding="async">
+                {{else}}
+                    {{#if @config.logo}}
+                        <img src="{{@config.logo}}" alt="{{@website.name}}" decoding="async">
+                    {{else}}
+                        <img src="{{asset "images/the-meshackm-blog-log.svg"}}" alt="{{@website.name}}" decoding="async">
+                    {{/if}}
+                {{/if}}
+            </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Open menu">
+                <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+                <span class="nav-toggle__label">Menu</span>
+            </button>
+            <div class="nav-overlay" aria-hidden="true"></div>
+            <div class="nav-drawer" aria-hidden="true">
+                <div class="nav-drawer__header">
+                    <span class="label-s">Navigation</span>
+                    <button class="nav-close" type="button" aria-label="Close menu">
+                        <span class="material-symbols-outlined" aria-hidden="true">close</span>
+                    </button>
+                </div>
+                <div class="nav-drawer__content">
+                    {{#if menus.mainmenu}}
+                        {{> nav-menu items=menus.mainmenu.items}}
+                    {{else}}
+                        <ul class="nav-links">
+                            {{#if @config.custom.primaryTagLinks}}
+                                {{#getTags (concatenate @config.custom.primaryTagLinks) "" ""}}
+                                    <li><a href="{{url}}">{{name}}</a></li>
+                                {{/getTags}}
+                            {{/if}}
+                            {{#if @config.custom.bookPage}}
+                                {{#getPage @config.custom.bookPage}}
+                                    <li><a href="{{url}}">{{title}}</a></li>
+                                {{/getPage}}
+                            {{/if}}
+                            <li><a href="{{@website.baseUrl}}about-me-2/">About Us</a></li>
+                            <li><a href="{{@website.baseUrl}}contact-me/">Contact Us</a></li>
+                        </ul>
+                    {{/if}}
+                    <div class="nav-right">
+                        <a href="{{@website.baseUrl}}feed.xml" class="feed-link">Feed</a>
+                        <button class="btn" type="button" data-subscribe-trigger>Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>

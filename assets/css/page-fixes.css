@@ -1,0 +1,14 @@
+/*
+ * Temporary quarantine layer
+ *
+ * Use this file only for short-term overrides while rules are being moved to
+ * their correct home in main.css, sitestyle.css, or post-templates.css.
+ */
+
+.article-post--page .article-post__hero--page {
+    padding-bottom: clamp(1.5rem, 3vw, 2.75rem);
+}
+
+.article-post--page .article-post__hero-copy h1 {
+    max-inline-size: none;
+}

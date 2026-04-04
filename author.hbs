@@ -1,0 +1,69 @@
+{{> head}}
+{{> header}}
+
+<main class="site-main archive-page">
+    {{#author}}
+        <section class="section archive-page__intro">
+            <div class="section-shell grid-12">
+                <div class="col-full md-col-7 archive-page__intro-copy">
+                    <span class="card-kicker">Author</span>
+                    <h1 class="display-m archive-page__title">{{name}}</h1>
+                    <div class="lead archive-page__lead">
+                        {{#if description}}
+                            {{{description}}}
+                        {{else}}
+                            Writing, perspective, and thoughtful experiments from {{name}}.
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </section>
+    {{/author}}
+
+    <section class="feed-wraper">
+        <div class="section-shell grid-12 archive-page__layout">
+            <aside class="col-full md-col-4 archive-page__sidebar">
+                <div class="archive-page__panel">
+                    <h2 class="headline-m">Author</h2>
+                    <hr>
+                    {{#author}}
+                        {{#if avatarImage}}
+                            <img src="{{avatarImage.url}}" alt="{{avatarImage.alt}}">
+                        {{/if}}
+                        <div class="stack">
+                            <p class="label-s">{{postsNumber}} published posts</p>
+                            {{#if email}}<p class="label-s">{{email}}</p>{{/if}}
+                        </div>
+                    {{/author}}
+                </div>
+
+                <div class="archive-page__panel">
+                    <h2 class="headline-m">Topics</h2>
+                    <hr>
+                    <div class="stack">
+                        {{#each tags}}
+                            {{#checkIf @index "<" 6}}
+                                <a class="archive-page__sidebar-link" href="{{url}}">{{name}}</a>
+                            {{/checkIf}}
+                        {{/each}}
+                    </div>
+                </div>
+            </aside>
+
+            <section class="feed col-full md-col-8 archive-page__feed" aria-labelledby="author-list-title">
+                <div class="archive-page__feed-heading">
+                    <span class="card-kicker">Browse</span>
+                    <h2 id="author-list-title" class="headline-l">Everything from this author</h2>
+                </div>
+                <hr>
+
+                {{#each posts}}
+                    {{> archive-post-item}}
+                {{/each}}
+            </section>
+        </div>
+        {{> pagination}}
+    </section>
+</main>
+
+{{> footer}}

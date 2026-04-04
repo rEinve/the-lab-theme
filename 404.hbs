@@ -1,0 +1,34 @@
+{{> head}}
+{{> header}}
+
+<main class="site-main archive-page">
+    <section class="section archive-page__intro">
+        <div class="section-shell grid-12">
+            <div class="col-full md-col-7 archive-page__intro-copy">
+                <span class="card-kicker">404</span>
+                <h1 class="display-m archive-page__title">The page you were looking for isn't here.</h1>
+                <p class="lead archive-page__lead">
+                    The link may have changed, the page may have moved, or the path may not exist anymore.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section book-cta">
+        <div class="section-shell">
+            <div class="book-cta__card layout-inline-between layout-inline-between--start">
+                <div class="book-cta__copy stack--sm">
+                    <span class="card-kicker">Try this instead</span>
+                    <h2 class="headline-l">Return to the homepage or move through the archive.</h2>
+                    <p>Start from the main page, browse the latest posts, or use your main navigation to continue.</p>
+                </div>
+                <div class="cluster">
+                    <a class="btn book-cta__button" href="{{@website.baseUrl}}">Go home</a>
+                    <a class="btn book-hero__button--secondary" href="{{@website.baseUrl}}{{@config.custom.archivePath}}">Open archive</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+{{> footer}}

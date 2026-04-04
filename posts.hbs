@@ -1,0 +1,73 @@
+{{> head}}
+{{> header}}
+
+<main class="site-main archive-page">
+    <section class="section archive-page__intro">
+        <div class="section-shell grid-12">
+            <div class="col-full md-col-7 archive-page__intro-copy">
+                <span class="card-kicker">Archive</span>
+                <h1 class="display-m archive-page__title">Recent writing, grounded ideas, and useful perspective.</h1>
+                <p class="lead archive-page__lead">
+                    This archive follows the same calm editorial rhythm as the category pages: fewer distractions,
+                    stronger titles, and space to move through the work clearly.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="feed-wraper">
+        <div class="section-shell grid-12 archive-page__layout">
+            <aside class="col-full md-col-4 archive-page__sidebar">
+                <div class="archive-page__panel">
+                    <h2 class="headline-m">Type</h2>
+                    <hr>
+                    <div class="stack">
+                        <p class="label-s">Essays</p>
+                        <p class="label-s">Practical notes</p>
+                        <p class="label-s">Work in progress</p>
+                    </div>
+                </div>
+
+                <div class="archive-page__panel">
+                    <h2 class="headline-m">Good Starting Points</h2>
+                    <hr>
+                    <div class="stack">
+                        {{#if @config.custom.homepageLatestPosts}}
+                            {{#getPosts (concatenate @config.custom.homepageLatestPosts) "" ""}}
+                                {{#checkIf @index "<" 2}}
+                                    <a class="archive-page__sidebar-link" href="{{url}}">{{title}}</a>
+                                {{/checkIf}}
+                            {{/getPosts}}
+                        {{else}}
+                            {{#each posts}}
+                                {{#checkIf @index "<" 2}}
+                                    <a class="archive-page__sidebar-link" href="{{url}}">{{title}}</a>
+                                {{/checkIf}}
+                            {{/each}}
+                        {{/if}}
+                        {{#if @config.custom.aboutPage}}
+                            {{#getPage @config.custom.aboutPage}}
+                                <a class="archive-page__sidebar-link" href="{{url}}">{{title}}</a>
+                            {{/getPage}}
+                        {{/if}}
+                    </div>
+                </div>
+            </aside>
+
+            <section class="feed col-full md-col-8 archive-page__feed" aria-labelledby="archive-list-title">
+                <div class="archive-page__feed-heading">
+                    <span class="card-kicker">Browse</span>
+                    <h2 id="archive-list-title" class="headline-l">Everything in the archive</h2>
+                </div>
+                <hr>
+
+                {{#each posts}}
+                    {{> archive-post-item}}
+                {{/each}}
+            </section>
+        </div>
+        {{> pagination}}
+    </section>
+</main>
+
+{{> footer}}

@@ -1,0 +1,315 @@
+{{> head}}
+{{> header}}
+
+<main class="site-main">
+    <section class="hero row">
+        <div class="hero-inner-wrap grid-12">
+            <div class="hero-inner col-full md-col-6">
+                <article class="toned stack-loose spotlight-card__body">
+                    <h1>{{@config.custom.homeHeroTitle}}</h1>
+
+                    <p class="article-lead">{{@config.custom.homeHeroLead}}</p>
+                    <div class="post-meta cluster spotlight-card__meta card-meta">
+                        {{#siteOwner}}
+                            <span>{{name}}</span>
+                        {{/siteOwner}}
+                        {{#each posts}}
+                            {{#checkIf @index "==" 0}}
+                                <span>&bull;</span>
+                                <time datetime="{{date createdAt "YYYY-MM"}}">{{date createdAt "MMM YYYY"}}</time>
+                            {{/checkIf}}
+                        {{/each}}
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section featured-book">
+        {{#if @config.custom.featuredBookPage}}
+            {{#getPage @config.custom.featuredBookPage}}
+                <section class="feature-book" aria-labelledby="feature-book">
+                    <div class="section-shell">
+                        <div class="grid-12 padding-xxl">
+                            <div class="col-full md-col-4 lg-col-7">
+                                {{#featuredImage}}
+                                    <img src="{{url}}" alt="{{alt}}">
+                                {{else}}
+                                    <img src="{{asset "images/positivity_book.png"}}" alt="{{title}}">
+                                {{/featuredImage}}
+                            </div>
+                            <div class="col-full md-col-8 lg-col-5 feature-book__content-shell">
+                                <article class="stack feature-book__content">
+                                    <span class="card-kicker">Featured book</span>
+                                    <h3 class="h2">{{title}}</h3>
+                                    <p class="lead">
+                                        {{#if excerpt}}
+                                            {{excerpt}}
+                                        {{else}}
+                                            A practical digital guide for building steadier mornings, healthier boundaries, and a more resilient day one habit at a time.
+                                        {{/if}}
+                                    </p>
+                                    <p>
+                                        If you want the fuller story before you buy, the book page walks through what the guide covers
+                                        and why the habits are designed to be realistic.
+                                    </p>
+                                    <div class="stack--xs">
+                                        <a class="btn" href="{{url}}">Read about the book</a>
+                                        <a class="feed-link" href="{{@config.custom.bookPurchaseUrl}}" target="_blank" rel="noopener noreferrer">
+                                            View on Gumroad
+                                        </a>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            {{/getPage}}
+        {{else}}
+            {{#if @config.custom.bookPage}}
+                {{#getPage @config.custom.bookPage}}
+                    <section class="feature-book" aria-labelledby="feature-book">
+                        <div class="section-shell">
+                            <div class="grid-12 padding-xxl">
+                                <div class="col-full md-col-4 lg-col-7">
+                                    {{#featuredImage}}
+                                        <img src="{{url}}" alt="{{alt}}">
+                                    {{else}}
+                                        <img src="{{asset "images/positivity_book.png"}}" alt="{{title}}">
+                                    {{/featuredImage}}
+                                </div>
+                                <div class="col-full md-col-8 lg-col-5 feature-book__content-shell">
+                                    <article class="stack feature-book__content">
+                                        <span class="card-kicker">Featured book</span>
+                                        <h3 class="h2">{{title}}</h3>
+                                        <p class="lead">
+                                            {{#if excerpt}}
+                                                {{excerpt}}
+                                            {{else}}
+                                                A practical digital guide for building steadier mornings, healthier boundaries, and a more resilient day one habit at a time.
+                                            {{/if}}
+                                        </p>
+                                        <p>
+                                            If you want the fuller story before you buy, the book page walks through what the guide covers
+                                            and why the habits are designed to be realistic.
+                                        </p>
+                                        <div class="stack--xs">
+                                            <a class="btn" href="{{url}}">Read about the book</a>
+                                            <a class="feed-link" href="{{@config.custom.bookPurchaseUrl}}" target="_blank" rel="noopener noreferrer">
+                                                View on Gumroad
+                                            </a>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                {{/getPage}}
+            {{else}}
+                <section class="feature-book" aria-labelledby="feature-book">
+                    <div class="section-shell">
+                        <div class="grid-12 padding-xxl">
+                            <div class="col-full md-col-4 lg-col-7">
+                                <img src="{{asset "images/positivity_book.png"}}" alt="Cover of the book 10 Daily Habits for Unstoppable Positivity.">
+                            </div>
+                            <div class="col-full md-col-8 lg-col-5 feature-book__content-shell">
+                                <article class="stack feature-book__content">
+                                    <span class="card-kicker">Featured book</span>
+                                    <h3 class="h2">10 Daily Habits for Unstoppable Positivity</h3>
+                                    <p class="lead">
+                                        A practical digital guide for building steadier mornings, healthier boundaries, and a more
+                                        resilient day one habit at a time.
+                                    </p>
+                                    <p>
+                                        If you want the fuller story before you buy, the book page walks through what the guide covers
+                                        and why the habits are designed to be realistic.
+                                    </p>
+                                    <div class="stack--xs">
+                                        <a class="btn" href="{{@website.baseUrl}}">Read about the book</a>
+                                        <a class="feed-link" href="{{@config.custom.bookPurchaseUrl}}" target="_blank" rel="noopener noreferrer">
+                                            View on Gumroad
+                                        </a>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            {{/if}}
+        {{/if}}
+    </section>
+
+    <section class="section newsletter-section">
+        {{> newsletter-box}}
+    </section>
+
+    <section class="section just-published">
+        <div class="section-shell home-tabs">
+            <div class="section-heading padding-l">
+                <h2 class="display-m">Explore the work</h2>
+                <p class="lead">Move between the latest writing and the topics you want to browse without leaving the homepage.</p>
+            </div>
+
+            <section class="tabs home-tabs__tabs" data-home-tabs>
+                <div class="tabs__list home-tabs__list" role="tablist" aria-label="Homepage topic views">
+                    <button class="tabs__tab home-tabs__tab" type="button" id="home-tab-latest" role="tab" aria-controls="home-panel-latest" aria-selected="true">
+                        Latest
+                    </button>
+                    {{#if @config.custom.homepageExploreTags}}
+                        {{#getTags (concatenate @config.custom.homepageExploreTags) "" ""}}
+                            <button class="tabs__tab home-tabs__tab" type="button" id="home-tab-{{slug}}" role="tab" aria-controls="home-panel-{{slug}}" aria-selected="false" tabindex="-1">
+                                {{name}}
+                            </button>
+                        {{/getTags}}
+                    {{else}}
+                        {{#if @config.custom.primaryTagLinks}}
+                            {{#getTags (concatenate @config.custom.primaryTagLinks) "" ""}}
+                                {{#checkIf slug "!=" "books"}}
+                                    <button class="tabs__tab home-tabs__tab" type="button" id="home-tab-{{slug}}" role="tab" aria-controls="home-panel-{{slug}}" aria-selected="false" tabindex="-1">
+                                        {{name}}
+                                    </button>
+                                {{/checkIf}}
+                            {{/getTags}}
+                        {{else}}
+                            {{#getTags "1,3,2" "" ""}}
+                                <button class="tabs__tab home-tabs__tab" type="button" id="home-tab-{{slug}}" role="tab" aria-controls="home-panel-{{slug}}" aria-selected="false" tabindex="-1">
+                                    {{name}}
+                                </button>
+                            {{/getTags}}
+                        {{/if}}
+                    {{/if}}
+                </div>
+
+                <section class="tabs__panel home-tabs__panel" id="home-panel-latest" role="tabpanel" aria-labelledby="home-tab-latest">
+                    <ul class="grid-12 home-card-grid">
+                        {{#if @config.custom.homepageLatestPosts}}
+                            {{#getPosts (concatenate @config.custom.homepageLatestPosts) "" ""}}
+                                <li class="col-full md-col-4 home-card-grid__item">
+                                    {{> home-post-card}}
+                                </li>
+                            {{/getPosts}}
+                        {{else}}
+                            {{#each posts}}
+                                {{#checkIf @index "<" 3}}
+                                    <li class="col-full md-col-4 home-card-grid__item">
+                                        {{> home-post-card}}
+                                    </li>
+                                {{/checkIf}}
+                            {{/each}}
+                        {{/if}}
+                    </ul>
+                </section>
+
+                {{#if @config.custom.homepageExploreTags}}
+                    {{#getTags (concatenate @config.custom.homepageExploreTags) "" ""}}
+                        <section
+                            class="tabs__panel home-tabs__panel"
+                            id="home-panel-{{slug}}"
+                            role="tabpanel"
+                            aria-labelledby="home-tab-{{slug}}"
+                            hidden>
+                            <ul class="grid-12 home-card-grid">
+                                {{#checkIf postsNumber ">" 0}}
+                                    {{#getPostsByTags (concatenate "count=3&allowed=published&orderby=createdAt&ordering=desc&tag_as=slug&tags=" slug)}}
+                                        <li class="col-full md-col-4 home-card-grid__item">
+                                            {{> home-post-card eyebrow=../name}}
+                                        </li>
+                                    {{/getPostsByTags}}
+                                {{else}}
+                                    <li class="col-full md-col-4 home-card-grid__item">
+                                        <article class="home-story-card">
+                                            <div class="home-story-card__body">
+                                                <span class="home-story-card__eyebrow">{{name}}</span>
+                                                <h3 class="headline-s home-story-card__title">No posts in {{name}} yet</h3>
+                                                <p class="home-story-card__excerpt home-story-card__excerpt--full">
+                                                    Add posts to this topic and they will show here automatically.
+                                                </p>
+                                            </div>
+                                            <div class="home-story-card__footer">
+                                                <a class="feed-link" href="{{url}}">Open {{name}}</a>
+                                            </div>
+                                        </article>
+                                    </li>
+                                {{/checkIf}}
+                            </ul>
+                        </section>
+                    {{/getTags}}
+                {{else}}
+                    {{#if @config.custom.primaryTagLinks}}
+                        {{#getTags (concatenate @config.custom.primaryTagLinks) "" ""}}
+                            {{#checkIf slug "!=" "books"}}
+                                <section
+                                    class="tabs__panel home-tabs__panel"
+                                    id="home-panel-{{slug}}"
+                                    role="tabpanel"
+                                    aria-labelledby="home-tab-{{slug}}"
+                                    hidden>
+                                    <ul class="grid-12 home-card-grid">
+                                        {{#checkIf postsNumber ">" 0}}
+                                            {{#getPostsByTags (concatenate "count=3&allowed=published&orderby=createdAt&ordering=desc&tag_as=slug&tags=" slug)}}
+                                                <li class="col-full md-col-4 home-card-grid__item">
+                                                    {{> home-post-card eyebrow=../name}}
+                                                </li>
+                                            {{/getPostsByTags}}
+                                        {{else}}
+                                            <li class="col-full md-col-4 home-card-grid__item">
+                                                <article class="home-story-card">
+                                                    <div class="home-story-card__body">
+                                                        <span class="home-story-card__eyebrow">{{name}}</span>
+                                                        <h3 class="headline-s home-story-card__title">No posts in {{name}} yet</h3>
+                                                        <p class="home-story-card__excerpt home-story-card__excerpt--full">
+                                                            Add posts to this topic and they will show here automatically.
+                                                        </p>
+                                                    </div>
+                                                    <div class="home-story-card__footer">
+                                                        <a class="feed-link" href="{{url}}">Open {{name}}</a>
+                                                    </div>
+                                                </article>
+                                            </li>
+                                        {{/checkIf}}
+                                    </ul>
+                                </section>
+                            {{/checkIf}}
+                        {{/getTags}}
+                    {{else}}
+                        {{#getTags "1,3,2" "" ""}}
+                            <section
+                                class="tabs__panel home-tabs__panel"
+                                id="home-panel-{{slug}}"
+                                role="tabpanel"
+                                aria-labelledby="home-tab-{{slug}}"
+                                hidden>
+                                <ul class="grid-12 home-card-grid">
+                                    {{#checkIf postsNumber ">" 0}}
+                                        {{#getPostsByTags (concatenate "count=3&allowed=published&orderby=createdAt&ordering=desc&tag_as=slug&tags=" slug)}}
+                                            <li class="col-full md-col-4 home-card-grid__item">
+                                                {{> home-post-card eyebrow=../name}}
+                                            </li>
+                                        {{/getPostsByTags}}
+                                    {{else}}
+                                        <li class="col-full md-col-4 home-card-grid__item">
+                                            <article class="home-story-card">
+                                                <div class="home-story-card__body">
+                                                    <span class="home-story-card__eyebrow">{{name}}</span>
+                                                    <h3 class="headline-s home-story-card__title">No posts in {{name}} yet</h3>
+                                                    <p class="home-story-card__excerpt home-story-card__excerpt--full">
+                                                        Add posts to this topic and they will show here automatically.
+                                                    </p>
+                                                </div>
+                                                <div class="home-story-card__footer">
+                                                    <a class="feed-link" href="{{url}}">Open {{name}}</a>
+                                                </div>
+                                            </article>
+                                        </li>
+                                    {{/checkIf}}
+                                </ul>
+                            </section>
+                        {{/getTags}}
+                    {{/if}}
+                {{/if}}
+            </section>
+        </div>
+    </section>
+</main>
+
+{{> footer}}

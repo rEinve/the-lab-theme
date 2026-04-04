@@ -1,0 +1,37 @@
+{{> head}}
+{{> header}}
+
+{{#page}}
+    <main class="post padding-xxl article-post article-post--page">
+        <article class="content">
+            <div class="section-shell layout-split layout-split--media article-post__hero article-post__hero--page">
+                <header class="article-post__hero-content">
+                    <div class="article-post__hero-copy stack center">
+                        <span class="card-kicker">Page</span>
+                        <h1>{{title}}</h1>
+                    </div>
+                </header>
+
+            {{#if featuredImage}}
+                {{#featuredImage}}
+                    <figure class="article-post__image">
+                        <div class="article-post__image-frame">
+                            <img src="{{url}}" alt="{{alt}}" loading="eager">
+                        </div>
+                    </figure>
+                {{/featuredImage}}
+            {{/if}}
+            </div>
+
+            <div class="surface-default">
+                <div class="section-shell grid-12 padding-xxl">
+                    <div class="col-full article-post__content article-post__content--page">
+                        {{{text}}}
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+{{/page}}
+
+{{> footer}}

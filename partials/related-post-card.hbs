@@ -1,0 +1,24 @@
+<div class="carousel__slide related-posts__slide" data-carousel-slide>
+    <article class="post-card related-posts__card">
+        <a class="post-card__link related-posts__card-link" href="{{url}}">
+            {{#featuredImage}}
+                <figure class="post-card__media related-posts__media">
+                    <img class="post-card__image" src="{{url}}" alt="{{alt}}" loading="lazy">
+                </figure>
+            {{/featuredImage}}
+            <div class="post-card__body related-posts__body">
+                <span class="post-card__eyebrow related-posts__eyebrow">
+                    {{#if mainTag}}{{mainTag.name}}{{else}}Related{{/if}}
+                </span>
+                <h3 class="post-card__title related-posts__card-title">{{title}}</h3>
+                <p class="post-card__excerpt related-posts__excerpt">
+                    {{#if postViewConfig.articleExcerpt}}
+                        {{postViewConfig.articleExcerpt}}
+                    {{else}}
+                        {{excerpt}}
+                    {{/if}}
+                </p>
+            </div>
+        </a>
+    </article>
+</div>

@@ -1,0 +1,30 @@
+<section class="related-posts padding-xxl" aria-labelledby="related-posts-title">
+    <div class="section-shell">
+        <div class="carousel related-posts__carousel" data-carousel aria-label="Related posts">
+            <div class="related-posts__header layout-inline-between layout-inline-between--start">
+                <div class="related-posts__heading layout-inline-between">
+                    <h2 id="related-posts-title" class="related-posts__title">Related Posts</h2>
+                    <a href="{{@website.baseUrl}}{{@config.custom.archivePath}}" class="related-posts__browse-link">
+                        Explore all posts
+                        <span aria-hidden="true">&#8250;</span>
+                    </a>
+                </div>
+                <div class="carousel__actions related-posts__actions">
+                    <button class="carousel__button carousel__button--icon related-posts__action" type="button" data-carousel-prev aria-label="Show previous related posts">
+                        <span aria-hidden="true">&#8249;</span>
+                    </button>
+                    <button class="carousel__button carousel__button--icon related-posts__action" type="button" data-carousel-next aria-label="Show next related posts">
+                        <span aria-hidden="true">&#8250;</span>
+                    </button>
+                </div>
+            </div>
+            <div class="carousel__viewport related-posts__viewport" data-carousel-viewport>
+                <div class="carousel__track related-posts__track" data-carousel-track>
+                    {{#each relatedPosts}}
+                        {{> related-post-card}}
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
