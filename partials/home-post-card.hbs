@@ -21,13 +21,9 @@
         <h3 class="headline-s home-story-card__title">
             <a href="{{url}}">{{title}}</a>
         </h3>
-        <p class="home-story-card__excerpt">
-            {{#if postViewConfig.articleExcerpt}}
-                {{postViewConfig.articleExcerpt}}
-            {{else}}
-                {{excerpt}}
-            {{/if}}
-        </p>
+        {{#if postViewConfig.articleExcerpt}}
+            <p class="home-story-card__excerpt">{{postViewConfig.articleExcerpt}}</p>
+        {{/if}}
     </div>
     <div class="home-story-card__footer">
         {{#if tags}}

@@ -1,29 +1,57 @@
 <!DOCTYPE html>
 <html lang="{{@website.language}}">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Geo meta tags: Tanzania / Dodoma -->
+<meta name="geo.region" content="TZ" />
+<meta name="geo.placename" content="Dodoma, Tanzania" />
+<meta name="ICBM" content="-6.1722, 35.7395" />
+<meta property="og:site_name" content="IntelliWebLab" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_TZ" />
+<!-- LocalBusiness schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "IntelliWebLab",
+  "description": "Web design, WhatsApp chatbots, n8n automation and AI agent development for businesses in Dodoma and across Tanzania.",
+  "url": "https://intelliweblab.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Dodoma",
+    "addressRegion": "Dodoma",
+    "addressCountry": "TZ"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -6.1722,
+    "longitude": 35.7395
+  },
+  "areaServed": "Tanzania",
+  "knowsAbout": ["Web Design", "WhatsApp Chatbot", "n8n Automation", "AI Agents", "Business Automation"]
+}
+</script>
     <title>{{metaTitleRaw}}</title>
     {{metaDescription}}
     {{metaRobots}}
     {{canonicalLink}}
     {{{socialMetaTags}}}
     {{#if @pagination}}
-        {{#if @pagination.previousPage}}
-            <link rel="prev" href="{{pageUrl @pagination.context @pagination.previousPage}}">
-        {{/if}}
-        {{#if @pagination.nextPage}}
-            <link rel="next" href="{{pageUrl @pagination.context @pagination.nextPage}}">
-        {{/if}}
+    {{#if @pagination.previousPage}}
+    <link rel="prev" href="{{pageUrl @pagination.context @pagination.previousPage}}">
+    {{/if}} 
+    {{#if @pagination.nextPage}}
+    <link rel="next" href="{{pageUrl @pagination.context @pagination.nextPage}}">
+    {{/if}}
     {{/if}}
     <link rel="icon" href="{{asset "images/logo-icon.svg"}}" type="image/svg+xml">
     <link rel="stylesheet" href="{{css "main.css"}}">
     {{{publiiHead}}}
-    <link rel="stylesheet" href="{{css "cookie-banner.css"}}">
-    <link rel="stylesheet" href="{{css "sitestyle.css"}}">
-    <link rel="stylesheet" href="{{css "post-templates.css"}}">
-    <link rel="stylesheet" href="{{css "page-fixes.css"}}">
     {{#if @config.custom.googleAnalyticsId}}
     <script>
         (function () {
@@ -61,4 +89,5 @@
     </script>
     {{/if}}
 </head>
+
 <body>

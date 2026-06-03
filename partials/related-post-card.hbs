@@ -11,13 +11,9 @@
                     {{#if mainTag}}{{mainTag.name}}{{else}}Related{{/if}}
                 </span>
                 <h3 class="post-card__title related-posts__card-title">{{title}}</h3>
-                <p class="post-card__excerpt related-posts__excerpt">
-                    {{#if postViewConfig.articleExcerpt}}
-                        {{postViewConfig.articleExcerpt}}
-                    {{else}}
-                        {{excerpt}}
-                    {{/if}}
-                </p>
+                {{#if postViewConfig.articleExcerpt}}
+                    <p class="post-card__excerpt related-posts__excerpt">{{postViewConfig.articleExcerpt}}</p>
+                {{/if}}
             </div>
         </a>
     </article>

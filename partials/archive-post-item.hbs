@@ -9,13 +9,9 @@
                 <a href="{{url}}">{{title}}</a>
             </h3>
         </header>
-        <p>
-            {{#if postViewConfig.articleExcerpt}}
-                {{postViewConfig.articleExcerpt}}
-            {{else}}
-                {{excerpt}}
-            {{/if}}
-        </p>
+        {{#if postViewConfig.articleExcerpt}}
+            <p>{{postViewConfig.articleExcerpt}}</p>
+        {{/if}}
     </div>
     {{#featuredImage}}
         <figure class="feed__image col-full md-col-4">

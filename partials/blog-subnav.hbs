@@ -1,0 +1,30 @@
+<div class="blog-subnav">
+    <div class="container blog-subnav__inner">
+        <p class="blog-subnav__title">Lab News &amp; Insights</p>
+        <nav class="blog-subnav__categories" aria-label="Blog categories">
+            <a href="{{@website.baseUrl}}" class="blog-subnav__link">All</a>
+            {{#each tags}}
+                {{#checkIf @index "<" 4}}
+                    <span class="blog-subnav__sep" aria-hidden="true">|</span>
+                    <a href="{{url}}" class="blog-subnav__link">{{name}}</a>
+                {{/checkIf}}
+            {{/each}}
+        </nav>
+        <div class="nav-right">
+                        <a href="{{@website.baseUrl}}feed.xml" class="feed-link">Feed</a>
+                         <form class="blog-subnav__search" role="search" action="#" method="get">
+            <label class="sr-only" for="blog-search">Search articles</label>
+            <input
+                id="blog-search"
+                class="blog-subnav__search-input"
+                type="search"
+                name="q"
+                placeholder="search"
+                autocomplete="off" />
+        </form>
+                        <button class="btn" type="button" data-subscribe-trigger>Subscribe</button>
+                    </div>
+       
+        
+    </div>
+</div>

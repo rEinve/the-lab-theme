@@ -1,53 +1,124 @@
 {{> head}}
 {{> header}}
 
+{{> blog-subnav}}
+
 {{#post}}
     <main class="post article-post article-post--standard">
-        <article class="content">
-            <div class="section-shell layout-split layout-split--media article-post__hero article-post__hero--standard padding-xxl">
-                <header class="article-post__hero-content padding-bottom">
-                    <div class="article-post__hero-copy stack">
-                        {{#if mainTag}}
-                            <span class="card-kicker">{{mainTag.name}}</span>
-                        {{/if}}
-                        <h1>{{title}}</h1>
-                        <div class="card-meta article-post__meta">
-                            <time datetime="{{date createdAt "YYYY-MM-DD"}}">{{date createdAt "MMMM D, YYYY"}}</time>
+        <article>
+            <div class="grid-12 article-post__hero padding-y-xl surface-default">
+                <div class="container">
+                    <header class="md-col-10-centered">
+                        <div class="grid-12 items-stretch">
+                            {{#featuredImage}}
+                                <figure class="md-col-6 article-post__image">
+                                    <div class="article-post__image-frame">
+                                        <img src="{{url}}" alt="{{alt}}" loading="eager">
+                                    </div>
+                                </figure>
+                            {{/featuredImage}}
+                            <article class="md-col-6 article-post__hero-col">
+                                <div class="article-post__hero-copy padding-l-xxl">
+                                    <div class="article-post__hero-top">
+                                        {{#if mainTag}}
+                                            <span class="article-post__kicker">{{mainTag.name}}</span>
+                                        {{/if}}
+                                        <h1>{{title}}</h1>
+                                    </div>
+                                    <div class="article-post__hero-bottom">
+                                        {{#if @config.post.articleExcerpt}}
+                                            <p class="lead article-post__lead">{{@config.post.articleExcerpt}}</p>
+                                        {{/if}}
+                                        <hr>
+                                        <div class="card-meta article-post__meta">
+                                            <time datetime="{{date createdAt "YYYY-MM-DD"}}">{{date createdAt "MMMM D, YYYY"}}</time>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
                         </div>
-                        {{#if @config.post.articleExcerpt}}
-                            <p class="lead article-post__lead">{{@config.post.articleExcerpt}}</p>
-                        {{else}}
-                            {{#if excerpt}}
-                                <p class="lead article-post__lead">{{excerpt}}</p>
-                            {{/if}}
-                        {{/if}}
-                    </div>
-                </header>
-
-                {{#featuredImage}}
-                    <figure class="article-post__image">
-                        <div class="article-post__image-frame">
-                            <img src="{{url}}" alt="{{alt}}" loading="eager">
-                        </div>
-                    </figure>
-                {{/featuredImage}}
+                    </header>
+                </div>
             </div>
 
-            <div class="surface-default">
-                <div class="section-shell grid-12 padding-xxl article-post__body-layout">
-                    <aside class="col-full md-col-2 lg-col-1 article-post__share-rail" aria-label="Share this article">
+            <div class="container">
+                <div class="grid-12 padding-y-xl article-post__body-layout">
+                    <aside class="md-col-2 lg-col-3 article-post__share-rail" aria-label="Share this article">
                         <div class="article-post__share-rail-inner">
+                            <div class="ai-summarize" data-ai-summarize
+                                data-article-url="{{url}}"
+                                data-article-title="{{title}}">
+                                <div class="ai-summarize__trigger">
+                                    <div class="ai-summarize__icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M9 12h6M9 8h6M9 16h4" />
+                                            <rect x="3" y="3" width="18" height="18" rx="3" />
+                                            <path d="M17 17l2.5 2.5" stroke-width="2" />
+                                            <circle cx="17" cy="17" r="3" fill="currentColor" stroke="none" opacity="0.15" />
+                                        </svg>
+                                    </div>
+                                    <p class="ai-summarize__title">AI Summarize</p>
+                                </div>
+                                <div class="ai-summarize__body">
+                                    <div class="ai-summarize__body-inner">
+                                        <p class="ai-summarize__subtitle">Select your AI for quick analysis:</p>
+                                        <div class="ai-summarize__options">
+                                            <a class="ai-summarize__btn" data-ai="chatgpt" href="#" target="_blank" rel="noopener noreferrer">
+                                                <svg class="ai-summarize__logo" viewBox="0 0 24 24" aria-hidden="true">
+                                                    <path d="M22.28 9.28a5.76 5.76 0 0 0-.49-4.74 5.83 5.83 0 0 0-6.27-2.8A5.83 5.83 0 0 0 11.14 0a5.83 5.83 0 0 0-5.56 4.04 5.83 5.83 0 0 0-3.9 2.83 5.83 5.83 0 0 0 .72 6.85 5.76 5.76 0 0 0 .49 4.74 5.83 5.83 0 0 0 6.27 2.8A5.83 5.83 0 0 0 12.86 24a5.84 5.84 0 0 0 5.57-4.04 5.83 5.83 0 0 0 3.9-2.83 5.83 5.83 0 0 0-.72-6.85h.67ZM12.86 22.5a4.33 4.33 0 0 1-2.78-1c.03-.02.1-.05.14-.07l4.61-2.66a.75.75 0 0 0 .38-.65v-6.5l1.95 1.13a.07.07 0 0 1 .04.05v5.38a4.34 4.34 0 0 1-4.34 4.32Zm-9.33-3.98a4.32 4.32 0 0 1-.52-2.9c.03.02.1.06.14.08l4.62 2.67a.75.75 0 0 0 .75 0l5.63-3.25v2.25a.07.07 0 0 1-.03.06L9.5 20.08a4.33 4.33 0 0 1-5.97-1.56Zm-1.22-9.5a4.3 4.3 0 0 1 2.26-1.9v5.47a.75.75 0 0 0 .38.65l5.63 3.25-1.95 1.12a.07.07 0 0 1-.07 0L4.1 14.96a4.33 4.33 0 0 1-.79-5.94Zm16.04 3.72-5.63-3.25 1.95-1.12a.07.07 0 0 1 .07 0l4.46 2.57a4.33 4.33 0 0 1-.67 7.81v-5.47a.75.75 0 0 0-.38-.65l.2.11Z" />
+                                                </svg>
+                                                ChatGPT
+                                            </a>
+                                            <a class="ai-summarize__btn" data-ai="gemini" href="#" target="_blank" rel="noopener noreferrer">
+                                                <svg class="ai-summarize__logo" viewBox="0 0 24 24" aria-hidden="true">
+                                                    <path d="M12 24A14.3 14.3 0 0 1 9.6 12 14.3 14.3 0 0 1 12 0a14.3 14.3 0 0 1 2.4 12A14.3 14.3 0 0 1 12 24zm0 0a14.3 14.3 0 0 1 12-2.4A14.3 14.3 0 0 1 24 12a14.3 14.3 0 0 1-12 2.4A14.3 14.3 0 0 1 0 12a14.3 14.3 0 0 1 12 2.4z" fill="currentColor" />
+                                                </svg>
+                                                Google AI
+                                            </a>
+                                            <a class="ai-summarize__btn" data-ai="perplexity" href="#" target="_blank" rel="noopener noreferrer">
+                                                <svg class="ai-summarize__logo" viewBox="0 0 24 24" aria-hidden="true">
+                                                    <path d="M22 7h-5.5l-4-4.5V7H4v10h8.5v4.5l4-4.5H22V7Zm-10 8H6V9h6v6Zm6 0h-4.5v-6H18v6Z" fill="currentColor" />
+                                                </svg>
+                                                Perplexity
+                                            </a>
+                                            <a class="ai-summarize__btn" data-ai="claude" href="#" target="_blank" rel="noopener noreferrer">
+                                                <svg class="ai-summarize__logo" viewBox="0 0 24 24" aria-hidden="true">
+                                                    <path d="M13.63 2 5 14.12h5.65L9.37 22 19 9.88h-5.65L13.63 2Z" fill="currentColor" />
+                                                </svg>
+                                                Claude
+                                            </a>
+                                            <a class="ai-summarize__btn" data-ai="grok" href="#" target="_blank" rel="noopener noreferrer">
+                                                <svg class="ai-summarize__logo" viewBox="0 0 24 24" aria-hidden="true">
+                                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" fill="currentColor" />
+                                                </svg>
+                                                Grok
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             {{> article-share label="Share"}}
                         </div>
                     </aside>
-                    <div class="col-full md-col-10 lg-col-9 article-post__content article-post__content--standard">
+
+                    <div class="md-col-6 lg-col-5 article-post__content article-post__content--standard">
                         {{{text}}}
                     </div>
+
+                    <aside class="md-col-4 lg-col-3-end article-post__toc" aria-label="On this page">
+                        <div class="article-post__toc-inner">
+                            <p class="article-post__toc-label">On this page</p>
+                            <nav>
+                                <ol class="article-post__toc-list" data-toc-list></ol>
+                            </nav>
+                        </div>
+                    </aside>
                 </div>
             </div>
         </article>
 
-        <footer class="padding-xxl article-post__footer">
+        <footer class="padding-y-xxl article-post__footer">
             <div class="section-shell grid-12">
                 <div class="article-post__footer-spacer md-col-2 lg-col-1" aria-hidden="true"></div>
                 <div class="col-full md-col-10 lg-col-9 article-post__footer-inner">
@@ -55,18 +126,18 @@
                     <div class="article-post__footer-actions article-post__footer-actions--standard layout-inline-between layout-inline-between--start">
                         <ul class="article-post__tags">
                             {{#each tags}}
-                                <li><a href="{{url}}">{{name}}</a></li>
+                                <li><a href="{{@website.baseUrl}}{{slug}}/">{{name}}</a></li>
                             {{/each}}
                         </ul>
                     </div>
                 </div>
             </div>
         </footer>
-
-        {{#if relatedPosts}}
-            {{> related-posts-section}}
-        {{/if}}
     </main>
 {{/post}}
+
+{{#if relatedPosts}}
+    {{> related-posts-section}}
+{{/if}}
 
 {{> footer}}

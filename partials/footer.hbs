@@ -1,45 +1,33 @@
 <footer class="section site-footer">
-    <div class="section-shell">
-        <div class="footer-main grid-12 padding-xl">
-            <div class="col-full lg-col-4 footer-column">
-                <div class="bottom-brand">
-                    <div class="logo">
-                        <a href="{{@website.baseUrl}}" class="navbar-brand custom-logo-link" rel="home"
-                            aria-label="{{@website.name}} home">
-                            <svg class="img-footer" viewBox="0 0 27.91 27.91" xmlns="http://www.w3.org/2000/svg"
-                                aria-hidden="true" focusable="false">
-                                <rect fill="#6f8371" width="27.91" height="27.91" rx="2.6" ry="2.6"></rect>
-                                <g fill="#f7f8f8">
-                                    <path
-                                        d="m21.08,8.7c-.1-.31-.28-.69-.52-1.08-.27-.44-.61-.88-.99-1.28-.66-.71-1.76-1.66-3.24-2.1-1-.3-2.03-.33-3.08-.09-1.19.27-2.39.9-3.58,1.87-.74.6-1.35,1.28-1.83,2.03-.45.7-.78,1.47-.98,2.28-.37,1.47-.33,3.09.12,4.69.36,1.3.99,2.55,1.78,3.58l-1.94,5.14.47.18,1.84-4.88s.04.04.05.06c.5.55,1.03,1,1.58,1.34.58.35,1.16.57,1.74.65,1.02.14,1.96.07,2.78-.21.66-.22,1.25-.58,1.75-1.07.48-.47.78-.96.95-1.3l.29.44c.17.27.53.35.81.2l.06-.04.41-.76.54.36.28-.42-.57-.38c-.11-.07-.24-.1-.37-.06-.13.03-.24.12-.3.23l-.34.65s-.07-.02-.09-.05l-.84-1.27c.31-.23.64-.52.95-.85.42-.45.83-1,1.18-1.57.38-.62.69-1.27.92-1.93.25-.73.4-1.45.44-2.15.05-.78-.04-1.52-.26-2.22Zm-3.4,9.23s-.26.81-1.01,1.54c-1.01.99-2.4,1.37-4.1,1.14-1-.14-2.07-.79-3.01-1.83-.08-.09-.15-.17-.22-.26l2.67-7.06c-.04.34-.07.69-.1,1.06-.08,1.08-.09,2.04-.03,2.86.09,1.04.3,1.85.63,2.42.08.14.22.24.38.28.28.07.57-.01.86-.24.23-.18.46-.45.7-.83.25-.39.5-.89.77-1.49.02.6.1,1.16.25,1.67.15.54.49.73.74.79.08.02.17.03.26.03.29,0,.63-.1.99-.31.13-.07.26-.16.39-.25l-.16.5Zm.75-1.7c-.42.44-.84.8-1.23,1.01-.36.2-.67.28-.89.23-.07-.02-.27-.07-.38-.44-.28-.98-.27-2.05-.16-2.98.58-1.62,1-3.2,1.06-3.44.03-.08.04-.17.03-.24-.02-.24-.18-.29-.23-.3-.06-.01-.18-.01-.29.12-.04.04-.07.1-.11.19-.08.17-.48,1.15-.76,2.47-.08.37-.14.74-.18,1.09-.04.1-.07.2-.11.3-.4,1.07-.79,1.9-1.16,2.48-.39.62-.76.92-1.03.86-.03,0-.05-.02-.06-.05-.53-.9-.72-2.62-.53-4.98.14-1.8.45-3.35.45-3.37l-.48-.14-3.4,9c-.67-.93-1.19-2.02-1.51-3.16-.93-3.33-.01-6.42,2.52-8.48,1.57-1.28,3.13-1.92,4.64-1.92.53,0,1.05.08,1.56.23,1.37.41,2.4,1.3,3.02,1.96.8.86,1.26,1.71,1.4,2.17.82,2.61-.5,5.59-2.17,7.38Z">
-                                    </path>
-                                    <path
-                                        d="m20.02,19.74s-.09-.03-.14-.02c-.07.02-.13.04-.2.05-.04,0-.08,0-.11,0-.05,0-.09.02-.12.05-.02.02-.03.03-.04.06-.01.02-.02.04-.02.07,0,.05.02.09.05.12.03.03.08.05.12.05.14,0,.28-.03.41-.07.04-.01.08-.04.1-.08.01-.02.02-.04.02-.07,0-.02,0-.05,0-.07-.01-.04-.04-.08-.08-.1Z">
-                                    </path>
-                                    <path
-                                        d="m21.09,18.95c-.03.06-.07.12-.11.17,0,0,0,0-.01.01,0,.01-.02.02-.03.03-.02.02-.03.03-.05.04-.02.01-.04.02-.07.03,0,0,0,0-.01,0-.03,0-.05.02-.07.05-.02.03-.03.08-.03.12,0,.09.05.18.1.17.17-.02.31-.18.42-.39.02-.03.03-.07.03-.12,0-.04-.01-.09-.03-.12-.04-.06-.11-.07-.15,0Z">
-                                    </path>
-                                </g>
-                            </svg>
-                        </a>
-                    </div>
-                    <div class="brand-copy">
-                        <p>&copy; {{@utils.currentYear}} {{@website.name}}.</p>
-                        <p>All rights reserved.</p>
-                    </div>
+    <div class="container">
+        <div class="footer-main">
+            <div class="footer-brand">
+                <div class="footer-brand__mark">
+                    <a href="/index.html" class="navbar-brand custom-logo-link" rel="home"
+                        aria-label="Intelli Web Lab home">
+                        <img src="{{asset "images/logo-icon.svg"}}" class="img-footer" alt="Intelli Web Lab logo"
+                            decoding="async" />
+                    </a>
+                </div>
+
+                <div class="footer-brand__copy">
+                    <h2 class="footer-brand__title">Intelli Web Lab Inc.</h2>
+                    <p>AI systems for revenue, productivity, and operations.</p>
+                    <p>&copy; 2026 Intelli Web Lab</p>
+                    <p>All rights Reserved</p>
                 </div>
             </div>
-            <div class="col-full lg-col-8 footer-links-container grid-12">
-                <div class="col-full md-col-4 footer-column">
-                    <h5 class="footer-column__title">Explore</h5>
+            <div class="footer-nav">
+                <div class="footer-column">
+                    <h3 class="footer-column__title">Services</h3>
                     <ul class="footer-links">
                         <li><a href="{{@website.baseUrl}}{{@config.custom.archivePath}}">Archive</a></li>
                         <li><a href="{{@website.baseUrl}}feed.xml">RSS feed</a></li>
                         <li><a href="{{@website.baseUrl}}">Homepage</a></li>
                     </ul>
                 </div>
-                <div class="col-full md-col-4 footer-column">
-                    <h5 class="footer-column__title">Sections</h5>
+                <div class="footer-column">
+                    <h3 class="footer-column__title">Products</h3>
                     <ul class="footer-links">
                         {{#if @config.custom.primaryTagLinks}}
                         {{#getTags (concatenate @config.custom.primaryTagLinks) "" ""}}
@@ -53,8 +41,9 @@
                             {{/if}}
                     </ul>
                 </div>
-                <div class="col-full md-col-4 footer-column">
-                    <h5 class="footer-column__title">Let's Connect</h5>
+
+                <div class="footer-column">
+                    <h3 class="footer-column__title">Our Insights</h3>
                     <ul class="footer-links">
                         <li><a href="{{@website.baseUrl}}about-me.html/">About Me</a></li>
                         <li><a href="{{@website.baseUrl}}contact-me.html">Contact Me</a></li>
@@ -62,88 +51,74 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="section-shell">
-        <div class="solicial-links padding-l">
-            {{#if @config.custom.youtubeUrl}}
-            <a href="{{@config.custom.youtubeUrl}}" class="social-link" aria-label="YouTube">
-                <span class="iconx">
-                    <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                        focusable="false" fill="currentColor">
-                        <path
-                            d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z">
-                        </path>
-                    </svg>
-                </span>
-            </a>
-            {{/if}}
-            {{#if @config.custom.instagramUrl}}
-            <a href="{{@config.custom.instagramUrl}}" class="social-link" aria-label="Instagram">
-                <span class="iconx">
-                    <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                        focusable="false" fill="currentColor">
-                        <path
-                            d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077">
-                        </path>
-                    </svg>
-                </span>
-            </a>
-            {{/if}}
-            {{#if @config.custom.facebookUrl}}
-            <a href="{{@config.custom.facebookUrl}}" class="social-link" aria-label="Facebook">
-                <span class="iconx">
-                    <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                        focusable="false" fill="currentColor">
-                        <path
-                            d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z">
-                        </path>
-                    </svg>
-                </span>
-            </a>
-            {{/if}}
-            {{#if @config.custom.xUrl}}
-            <a href="{{@config.custom.xUrl}}" class="social-link" aria-label="X">
-                <span class="iconx">
-                    <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                        focusable="false" fill="currentColor">
-                        <path
-                            d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z">
-                        </path>
-                    </svg>
-                </span>
-            </a>
-            {{/if}}
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <div class="section-shell footer-bottom__links">
+        <div class="footer-divider"></div>
+        <div class="footer-bottom">
+            <div class="footer-bottom__top">
+               <div class="footer-follow">
+                <span class="footer-follow__label">Follow Us</span>
+                {{#if @config.custom.youtubeUrl}}
+                <a href="{{@config.custom.youtubeUrl}}" class="social-link" aria-label="YouTube">
+                    <span class="iconx">
+                        <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true" focusable="false" fill="currentColor">
+                            <path
+                                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z">
+                            </path>
+                        </svg>
+                    </span>
+                </a>
+                {{/if}}
+                {{#if @config.custom.instagramUrl}}
+                <a href="{{@config.custom.instagramUrl}}" class="social-link" aria-label="Instagram">
+                    <span class="iconx">
+                        <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true" focusable="false" fill="currentColor">
+                            <path
+                                d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077">
+                            </path>
+                        </svg>
+                    </span>
+                </a>
+                {{/if}}
+                {{#if @config.custom.facebookUrl}}
+                <a href="{{@config.custom.facebookUrl}}" class="social-link" aria-label="Facebook">
+                    <span class="iconx">
+                        <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true" focusable="false" fill="currentColor">
+                            <path
+                                d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z">
+                            </path>
+                        </svg>
+                    </span>
+                </a>
+                {{/if}}
+                {{#if @config.custom.xUrl}}
+                <a href="{{@config.custom.xUrl}}" class="social-link" aria-label="X">
+                    <span class="iconx">
+                        <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true" focusable="false" fill="currentColor">
+                            <path
+                                d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z">
+                            </path>
+                        </svg>
+                    </span>
+                </a>
+                {{/if}}
+              </div>
+            </div>
+            <div class="footer-bottom__links">
             <a href="{{@website.baseUrl}}privacy-policy.html">Privacy Policy</a>
             <a href="{{@website.baseUrl}}terms-of-use.html">Terms of Use</a>
+            </div>
+            <div class=" footer-wordmark">
+            <img src="{{asset "images/intelliweblab-footer-logo.svg"}}" </div>
         </div>
     </div>
-</footer> 
-<script src="{{js "nav-drawer.js"}}"></script>
-<script src="{{js "subscribe-modal.js"}}"></script>
-<script src="{{js "home-tabs.js"}}"></script>
-<script src="{{js "video-post.js"}}"></script>
-<script>
-    (function () {
-        var bundleUrl = '{{js "main-CPFgvH2_.js"}}';
-
-        if (window.location.protocol === 'file:') {
-            document.documentElement.setAttribute('data-file-preview', 'true');
-            console.info('Skipping main module bundle in file:// preview. Open the site through Publii preview or a local web server to test full interactions.');
-            return;
-        }
-
-        var bundle = document.createElement('script');
-        bundle.type = 'module';
-        bundle.src = bundleUrl;
-        document.body.appendChild(bundle);
-    })();
-</script>
+</footer>
+<script>window.__NEWSLETTER_IMG__="{{asset "images/woman-reading-emeil-newsletter.svg"}}";</script>
+<script type="text/javascript" src="https://app.mailjet.com/pas-nc-embedded-v2.js"></script>
+<script defer src="{{js "main.js"}}"></script>
 {{{publiiFooter}}}
-<script src="{{js "cookie-banner.js"}}"></script>
 </body>
 
 </html>

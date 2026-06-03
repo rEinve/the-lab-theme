@@ -1,6 +1,6 @@
-# Themeshak Publii Theme
+# The Lab Theme — Publii Theme
 
-Custom Publii theme powering the editorial site at Themeshak.
+Custom Publii theme powering the editorial site at Intelli Web Lab.
 
 This theme was built as a branded publication theme for essays, category-led browsing, podcast or vlog entries, and a dedicated archive experience. It is structured around a small in-house design system, with clear separation between core primitives, site composition, and template-specific styles.
 

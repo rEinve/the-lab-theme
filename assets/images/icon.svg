@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="102px" height="134px" viewBox="0 0 102 134" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>logo icon neg@1x</title>
+    <defs>
+        <path d="M0,0 L102,0 L102,134 L0,134 L0,0 Z" id="path-1"></path>
+    </defs>
+    <g id="logo-icon-neg" stroke="none" fill="none" xlink:href="#path-1" fill-rule="evenodd">
+        <use fill-opacity="0" fill="#FFFFFF" xlink:href="#path-1"></use>
+        <rect id="Rectangle-2" fill="#06161A" x="0" y="0" width="102" height="134" rx="9"></rect>
+    </g>
+</svg>

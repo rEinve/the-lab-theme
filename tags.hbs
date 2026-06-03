@@ -1,45 +1,51 @@
 {{> head}}
 {{> header}}
 
-<main class="site-main archive-page">
-    <section class="section archive-page__intro">
-        <div class="section-shell grid-12">
-            <div class="col-full md-col-7 archive-page__intro-copy">
-                <span class="card-kicker">Tags</span>
-                <h1 class="display-m archive-page__title">Browse all topics across the publication.</h1>
-                <p class="lead archive-page__lead">
-                    Move through the tag archive to find writing by theme, focus area, or recurring idea.
-                </p>
+{{> blog-subnav}}
+
+<main class="site-main archive-page blog-index">
+
+    <section class="archive-page__intro blog-index__intro">
+        <div class="container">
+            <div class="grid-12 blog-index__headline">
+                <div class="md-col-4">
+                    <h1 class="display-m archive-page__title">All Topics</h1>
+                </div>
+                <div class="md-col-8">
+                    <p class="lead archive-page__lead">
+                        Browse all topics across the publication. Move through the tag archive to find writing by theme, focus area, or recurring idea.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="feed-wraper">
-        <div class="section-shell">
-            <div class="layout-grid-3">
+    <section class="blog-index__latest" aria-labelledby="tags-list-title">
+        <div class="container">
+            <div class="archive-page__feed-heading">
+                <span class="card-kicker">Browse</span>
+                <h2 id="tags-list-title" class="headline-l">All Topics</h2>
+            </div>
+            <hr>
+            <div class="blog-index__latest-grid">
                 {{#each tags}}
-                    <article class="home-story-card">
-                        <div class="home-story-card__body stack--sm">
-                            <span class="home-story-card__eyebrow">Topic</span>
-                            <h2 class="headline-s home-story-card__title">
-                                <a href="{{url}}">{{name}}</a>
-                            </h2>
-                            <p class="home-story-card__excerpt">
-                                {{#if description}}
-                                    {{description}}
-                                {{else}}
-                                    {{postsNumber}} post{{#checkIf postsNumber "!=" 1}}s{{/checkIf}} in this topic.
-                                {{/if}}
-                            </p>
-                        </div>
-                        <div class="home-story-card__footer">
-                            <span class="home-story-card__tag">{{postsNumber}} posts</span>
-                        </div>
+                    <article class="blog-index__story-card">
+                        <a class="blog-index__story-link" href="{{url}}">
+                            <div class="blog-index__story-meta">
+                                <span>Topic</span>
+                                <span>{{postsNumber}} post{{#checkIf postsNumber "!=" 1}}s{{/checkIf}}</span>
+                            </div>
+                            <h3 class="blog-index__story-title">{{name}}</h3>
+                            {{#if description}}
+                                <p class="blog-index__story-text">{{description}}</p>
+                            {{/if}}
+                        </a>
                     </article>
                 {{/each}}
             </div>
         </div>
     </section>
+
 </main>
 
 {{> footer}}

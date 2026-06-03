@@ -1,5 +1,5 @@
 <header class="header">
-    <div class="section-shell">
+    <div class="container">
         <nav class="nav-container site-nav" aria-label="Primary">
             <a href="{{@website.baseUrl}}" class="navbar-brand custom-logo-link" rel="home" aria-label="{{@website.name}} home">
                 {{#if @website.logo}}
@@ -8,7 +8,7 @@
                     {{#if @config.logo}}
                         <img src="{{@config.logo}}" alt="{{@website.name}}" decoding="async">
                     {{else}}
-                        <img src="{{asset "images/the-meshackm-blog-log.svg"}}" alt="{{@website.name}}" decoding="async">
+                        <img src="{{asset "images/logo.svg"}}" alt="{{@website.name}}" width="32" height="52" decoding="async">
                     {{/if}}
                 {{/if}}
             </a>
@@ -39,14 +39,9 @@
                                     <li><a href="{{url}}">{{title}}</a></li>
                                 {{/getPage}}
                             {{/if}}
-                            <li><a href="{{@website.baseUrl}}about-me-2/">About Us</a></li>
-                            <li><a href="{{@website.baseUrl}}contact-me/">Contact Us</a></li>
                         </ul>
                     {{/if}}
-                    <div class="nav-right">
-                        <a href="{{@website.baseUrl}}feed.xml" class="feed-link">Feed</a>
-                        <button class="btn" type="button" data-subscribe-trigger>Subscribe</button>
-                    </div>
+                   
                 </div>
             </div>
         </nav>
