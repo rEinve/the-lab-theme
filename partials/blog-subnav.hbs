@@ -1,30 +1,44 @@
 <div class="blog-subnav">
     <div class="container blog-subnav__inner">
-        <p class="blog-subnav__title">Lab News &amp; Insights</p>
-        <nav class="blog-subnav__categories" aria-label="Blog categories">
-            <a href="{{@website.baseUrl}}" class="blog-subnav__link">All</a>
-            {{#each tags}}
-                {{#checkIf @index "<" 4}}
-                    <span class="blog-subnav__sep" aria-hidden="true">|</span>
-                    <a href="{{url}}" class="blog-subnav__link">{{name}}</a>
-                {{/checkIf}}
-            {{/each}}
-        </nav>
+        <h3 class="h4">Lab News &amp; Insights</h3>
+
+        <div class="blog-subnav__topics">
+            <button
+                class="blog-subnav__topics-trigger"
+                type="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="topics-dropdown">
+                All Topics
+                <span class="blog-subnav__topics-icon" aria-hidden="true"></span>
+            </button>
+            <div
+                id="topics-dropdown"
+                class="blog-subnav__topics-panel">
+                <ul>
+                    <li><a class="blog-subnav__link" href="{{@website.baseUrl}}ai-automation">AI &amp; Automation</a></li>
+                    <li><a class="blog-subnav__link" href="{{@website.baseUrl}}revenue-conversion">Revenue &amp; Conversion</a></li>
+                    <li><a class="blog-subnav__link" href="{{@website.baseUrl}}hospitality-tourism">Hospitality &amp; Tourism</a></li>
+                    <li><a class="blog-subnav__link" href="{{@website.baseUrl}}business-operations">Business Operations</a></li>
+                    <li><a class="blog-subnav__link" href="{{@website.baseUrl}}digital-marketing">Digital Marketing</a></li>
+                    <li><a class="blog-subnav__link" href="{{@website.baseUrl}}website-strategy">Website Strategy</a></li>
+                </ul>
+            </div>
+        </div>
+
         <div class="nav-right">
-                        <a href="{{@website.baseUrl}}feed.xml" class="feed-link">Feed</a>
-                         <form class="blog-subnav__search" role="search" action="#" method="get">
-            <label class="sr-only" for="blog-search">Search articles</label>
-            <input
-                id="blog-search"
-                class="blog-subnav__search-input"
-                type="search"
-                name="q"
-                placeholder="search"
-                autocomplete="off" />
-        </form>
-                        <button class="btn" type="button" data-subscribe-trigger>Subscribe</button>
-                    </div>
-       
-        
+            <a href="{{@website.baseUrl}}feed.xml" class="feed-link">Feed</a>
+            <form class="blog-subnav__search" role="search" action="#" method="get">
+                <label class="sr-only" for="blog-search">Search articles</label>
+                <input
+                    id="blog-search"
+                    class="blog-subnav__search-input"
+                    type="search"
+                    name="q"
+                    placeholder="search"
+                    autocomplete="off" />
+            </form>
+            <button class="btn" type="button" data-subscribe-trigger>Subscribe</button>
+        </div>
     </div>
 </div>

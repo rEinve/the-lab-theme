@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="98px" height="99px" viewBox="0 0 98 99" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>clock</title>
+    <g id="Index" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="home" transform="translate(-765, -3387)">
+            <g id="help-Section" transform="translate(0, 2238)">
+                <g id="clock" transform="translate(765, 1130.0908)">
+                    <circle id="clock-2" fill="#E44E53" cx="49" cy="68.5020816" r="49"></circle>
+                    <path d="M47.759424,60.2707773 L74.759424,60.2707773 C75.5878511,60.2707773 76.259424,60.9423502 76.259424,61.7707773 C76.259424,62.5992045 75.5878511,63.2707773 74.759424,63.2707773 L47.759424,63.2707773 C46.9309969,63.2707773 46.259424,62.5992045 46.259424,61.7707773 C46.259424,60.9423502 46.9309969,60.2707773 47.759424,60.2707773 Z" id="Rectangle-7" fill="#FCFDFD" transform="translate(61.2594, 61.7708) rotate(-33) translate(-61.2594, -61.7708)"></path>
+                    <path d="M49,64 C51.0504975,64 52.8127064,65.23431 53.5841577,67.0004611 L69.5,67 C70.3284271,67 71,67.6715729 71,68.5 C71,69.3284271 70.3284271,70 69.5,70 L53.8997409,70.0011864 C53.4360122,72.2828356 51.4185387,74 49,74 C46.2385763,74 44,71.7614237 44,69 C44,66.2385763 46.2385763,64 49,64 Z" id="Combined-Shape" fill="#FCFDFD"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

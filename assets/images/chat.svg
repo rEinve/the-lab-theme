@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="170px" height="90px" viewBox="0 0 170 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>chat</title>
+    <g id="Index" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="home" transform="translate(-225, -3395)">
+            <g id="help-Section" transform="translate(0, 2238)">
+                <g id="chat" transform="translate(306.7149, 1200.9467) rotate(180) translate(-306.7149, -1200.9467)translate(225.0721, 1152.8908)">
+                    <path d="M155,2 C159.418278,2 163,5.581722 163,10 L163,60 C163,64.418278 159.418278,68 155,68 L40.05,68 L-6.48795708,91.7175704 L0.0429540358,60.8340487 C0.0145550567,60.5599061 -1.13686838e-13,60.2816528 -1.13686838e-13,60 L-1.13686838e-13,10 C-1.13686838e-13,5.581722 3.581722,2 8,2 L155,2 Z" id="Combined-Shape" fill="#E44E53"></path>
+                    <circle id="Oval" fill="#E1E9EA" cx="88" cy="36" r="5"></circle>
+                    <circle id="Oval-Copy" fill="#E1E9EA" cx="112" cy="36" r="5"></circle>
+                    <circle id="Oval-Copy-2" fill="#E1E9EA" cx="137" cy="36" r="5"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

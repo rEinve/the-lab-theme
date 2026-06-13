@@ -1,49 +1,67 @@
-<header class="header">
-    <div class="container">
-        <nav class="nav-container site-nav" aria-label="Primary">
-            <a href="{{@website.baseUrl}}" class="navbar-brand custom-logo-link" rel="home" aria-label="{{@website.name}} home">
-                {{#if @website.logo}}
-                    <img src="{{@website.logo}}" alt="{{@website.name}}" decoding="async">
-                {{else}}
-                    {{#if @config.logo}}
-                        <img src="{{@config.logo}}" alt="{{@website.name}}" decoding="async">
-                    {{else}}
-                        <img src="{{asset "images/logo.svg"}}" alt="{{@website.name}}" width="32" height="52" decoding="async">
-                    {{/if}}
-                {{/if}}
-            </a>
-            <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Open menu">
-                <span class="material-symbols-outlined" aria-hidden="true">menu</span>
-                <span class="nav-toggle__label">Menu</span>
-            </button>
-            <div class="nav-overlay" aria-hidden="true"></div>
-            <div class="nav-drawer" aria-hidden="true">
-                <div class="nav-drawer__header">
-                    <span class="label-s">Navigation</span>
-                    <button class="nav-close" type="button" aria-label="Close menu">
-                        <span class="material-symbols-outlined" aria-hidden="true">close</span>
-                    </button>
-                </div>
-                <div class="nav-drawer__content">
-                    {{#if menus.mainmenu}}
-                        {{> nav-menu items=menus.mainmenu.items}}
-                    {{else}}
-                        <ul class="nav-links">
-                            {{#if @config.custom.primaryTagLinks}}
-                                {{#getTags (concatenate @config.custom.primaryTagLinks) "" ""}}
-                                    <li><a href="{{url}}">{{name}}</a></li>
-                                {{/getTags}}
-                            {{/if}}
-                            {{#if @config.custom.bookPage}}
-                                {{#getPage @config.custom.bookPage}}
-                                    <li><a href="{{url}}">{{title}}</a></li>
-                                {{/getPage}}
-                            {{/if}}
-                        </ul>
-                    {{/if}}
-                   
-                </div>
-            </div>
-        </nav>
+<header class="main-menu site-nav">
+  <div class="container">
+    <div class="main-menu__inner">
+      <a href="{{@website.baseUrl}}" class="main-menu__brand" rel="home" aria-label="{{@website.name}} home">
+        {{#if @website.logo}}
+          <img src="{{@website.logo}}" alt="{{@website.name}}" width="30" height="52" decoding="async" />
+        {{else}}
+          <img src="{{asset "images/logo.svg"}}" alt="{{@website.name}}" width="30" height="52" decoding="async" />
+        {{/if}}
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Open menu">
+        <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+        <span class="nav-toggle__label">Menu</span>
+      </button>
+
+      <div class="nav-overlay" aria-hidden="true"></div>
+
+      <div class="nav-drawer" aria-hidden="true">
+        <div class="nav-drawer__header">
+          <span class="label-s">Navigation</span>
+          <button class="nav-close" type="button" aria-label="Close menu">
+            <span class="material-symbols-outlined" aria-hidden="true">close</span>
+          </button>
+        </div>
+        <div class="nav-drawer__content">
+          <ul class="main-menu__links nav-links">
+            <li class="main-menu__item main-menu__item--has-dropdown">
+              <button class="main-menu__link main-menu__dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+                Products &amp; Service
+                <span class="main-menu__chevron" aria-hidden="true"></span>
+              </button>
+              <div class="main-menu__dropdown-panel">
+                <ul class="main-menu__dropdown-list">
+                  <li><a class="main-menu__dropdown-link" href="{{@website.baseUrl}}pages/sell-more.html">Sell More</a></li>
+                  <li><a class="main-menu__dropdown-link" href="{{@website.baseUrl}}pages/save-time.html">Save Time</a></li>
+                  <li><a class="main-menu__dropdown-link" href="{{@website.baseUrl}}pages/run-better.html">Run Better</a></li>
+                  <li><a class="main-menu__dropdown-link" href="{{@website.baseUrl}}smartweb/">SmartWebsite</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="main-menu__item main-menu__item--has-dropdown">
+              <button class="main-menu__link main-menu__dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+                Lab News &amp; Insights
+                <span class="main-menu__chevron" aria-hidden="true"></span>
+              </button>
+              <div class="main-menu__dropdown-panel">
+                <ul class="main-menu__dropdown-list">
+                  <li><a class="main-menu__dropdown-link" href="{{@website.baseUrl}}topics/">All Insights</a></li>
+                  <li><a class="main-menu__dropdown-link" href="{{@website.baseUrl}}revenue-conversion/">Revenue Growth</a></li>
+                  <li><a class="main-menu__dropdown-link" href="{{@website.baseUrl}}workflow-automation/">Team Productivity</a></li>
+                  <li><a class="main-menu__dropdown-link" href="{{@website.baseUrl}}business-operations/">Business Operations</a></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a class="main-menu__link" href="{{@website.baseUrl}}feed.xml">Feed</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
     </div>
+
+    <div class="main-menu__right-placeholder" aria-hidden="true"></div>
+  </div>
 </header>
